@@ -1,0 +1,292 @@
+/* --- Global Styles & Resets --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.page-wrapper {
+    max-width: 1000px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* --- Header & Navigation --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffeae0;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #555;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 25px;
+    font-size: 16px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    border-color: #007bff;
+}
+
+/* Style untuk link navigasi yang sedang aktif */
+.nav-menu a.active {
+    color: #007bff;
+    font-weight: bold;
+    border-color: #007bff;
+}
+
+
+/* --- Hero Section --- */
+.hero-section {
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    background-image: url('https://marketplace.canva.com/MADCBaz70Yw/1/thumbnail_large-1/canva-white-silk-MADCBaz70Yw.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* PERUBAHAN DI SINI: Ukuran gambar hero diatur */
+.hero-foreground-img {
+    width: 90%; /* Responsif di layar kecil */
+    max-width: 350px; /* Batas ukuran maksimal gambar */
+    height: auto; /* Menjaga rasio aspek gambar */
+    border: 5px solid white;
+    border-radius: 8px;
+    box-shadow: 0 4px 0px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+/* --- General Section Styling --- */
+.content-section {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+#services { background-color: #fffacd; }
+#about    { background-color: #f0e6ff; }
+#contact  { background-color: #e6ffed; }
+
+.section-title {
+    display: inline-block;
+    padding: 10px 30px;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+    background-color: #fff;
+    margin-bottom: 40px;
+}
+
+/* --- Services Section --- */
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.service-item {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.service-item h3 {
+    margin-bottom: 10px;
+}
+
+/* --- About Section --- */
+.about-intro {
+    margin-bottom: 40px;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 30px;
+}
+
+.about-text, .about-performance {
+    flex: 1;
+}
+
+.about-performance h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.performance-shape {
+    height: 100px;
+    border: 2px solid #555;
+    background-color: white;
+    border-radius: 65% 35% 55% 45% / 45% 55% 45% 55%;
+}
+
+/* --- Contact Section --- */
+.contact-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.contact-form {
+    flex: 2;
+}
+
+.social-profile-box {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 25px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #f0f0f0;
+}
+
+.social-profile-box h3 {
+    margin-bottom: 5px;
+}
+
+.social-profile-box p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.social-icons i {
+    color: #333;
+    font-size: 24px;
+    margin: 0 10px;
+}
+
+.form-row {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.form-row input,
+.form-row textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-row textarea {
+    resize: vertical;
+}
+
+.form-row button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-row button:hover {
+    background-color: #0056b3;
+}
+
+/* --- Media Queries untuk Responsif --- */
+@media (max-width: 768px) {
+    .page-wrapper {
+        margin: 0;
+        border: none;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .content-section {
+        padding: 40px 20px;
+    }
+
+    .services-container,
+    .about-container,
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .hero-foreground-img {
+        max-width: 300px;
+    }
+}
+

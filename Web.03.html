@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Sederhana</title>
+    <!-- Pastikan nama file ini sesuai dengan file CSS Anda -->
+    <link rel="stylesheet" href="Web.03.css">
+    <!-- Link ke Font Awesome untuk ikon sosial media -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <div class="page-wrapper">
+
+        <!-- 1. Header & Navigasi -->
+        <header id="home" class="header">
+            <div class="logo">
+                <!-- Gambar logo diperbarui agar sesuai screenshot -->
+                <img src="https://i.pinimg.com/736x/3d/60/8b/3d608b5af4a40570a80597e85e0ea6db.jpg" alt="Logo Perusahaan">
+            </div>
+            <nav class="nav-menu">
+                <a href="#home" class="active">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- 2. Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <!-- Gambar hero diperbarui dan akan dikecilkan oleh CSS -->
+                    <img src="https://i.pinimg.com/736x/a8/10/d7/a810d7f46b412f9742d40fdcc8a4809d.jpg" alt="Sakamoto Days" class="hero-foreground-img">
+                    <h1>Image, Slogan, Kontak, dll</h1>
+                </div>
+            </section>
+
+            <!-- 3. Services Section -->
+            <section id="services" class="content-section">
+                <div class="section-title">Services</div>
+                <div class="services-container">
+                    <div class="service-item">
+                        <h3>Heading</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Heading</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Heading</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. About Section -->
+            <section id="about" class="content-section">
+                <div class="section-title">About</div>
+                <p class="about-intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                <div class="about-container">
+                    <div class="about-text">
+                        <h3>Heading</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="about-performance">
+                        <h3>Performance</h3>
+                        <div class="performance-shape"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Contact Section -->
+            <section id="contact" class="content-section">
+                <div class="section-title">Contact</div>
+                <div class="contact-container">
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <input type="text" placeholder="Nama Depan">
+                            <input type="text" placeholder="Nama Belakang">
+                        </div>
+                        <div class="form-row">
+                            <textarea placeholder="Pesan Anda" rows="6"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <button type="submit">Kirim</button>
+                        </div>
+                    </form>
+                    <div class="social-profile-box">
+                        <img src="https://i.pinimg.com/736x/c7/bd/37/c7bd37e64ba82713598c5d3233310f50.jpg" alt="Foto Profil" class="profile-pic">
+                        <h3>Nama Anda</h3>
+                        <p>Hiduplah seperti larry</p>
+                        <div class="social-icons">
+                            <i class="fab fa-linkedin" aria-label="LinkedIn"></i>
+                            <i class="fab fa-instagram" aria-label="Instagram"></i>
+                            <i class="fab fa-github" aria-label="GitHub"></i>
+                            <i class="fab fa-twitter" aria-label="Twitter"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer sengaja saya hapus agar sesuai dengan permintaan kode terakhir -->
+
+    </div>
+
+    <!-- JAVASCRIPT UNTUK NAVIGASI AKTIF -->
+    <script>
+        const sections = document.querySelectorAll('section, header');
+        const navLi = document.querySelectorAll('.nav-menu a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                // Menambahkan sedikit offset (misalnya 60 piksel) agar sorotan lebih akurat
+                if (pageYOffset >= (sectionTop - 60)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLi.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') == '#' + current) {
+                    a.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
